@@ -2,7 +2,11 @@ package eu.fbk.af.rubrica.model;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+
+
 public class Persona {
+    @Id
     private String codiceFiscale;
     private String nome;
     private String cognome;

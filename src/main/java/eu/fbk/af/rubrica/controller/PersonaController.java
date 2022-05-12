@@ -3,6 +3,7 @@ package eu.fbk.af.rubrica.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,10 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import eu.fbk.af.rubrica.model.Persona;
 
+
+
 @RestController //???
 public class PersonaController {
 
 	private List<Persona> persone = new ArrayList<>();
+
+	@Autowired
+	private personaRepository personaRepository;
 	
 	@PostMapping ("/api/persona")//???
 	public void add(@RequestBody Persona persona) {
